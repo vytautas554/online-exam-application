@@ -1,0 +1,35 @@
+<div class="container">
+  <div>
+    <div *ngFor="let item of questionsData" class="card">
+      <cdk-accordion class="example-accordion">
+        <cdk-accordion-item
+          #accordionItem="cdkAccordionItem"
+          class="example-accordion-item"
+          role="button"
+          tabindex="0"
+          [attr.aria-expanded]="accordionItem.expanded"
+        >
+          <div class="content-top" (click)="accordionItem.toggle()">
+            <div>{{ item.title }}</div>
+          </div>
+          <div
+            role="region"
+            [style.display]="accordionItem.expanded ? '' : 'none'"
+            class="accordion-container"
+            style="margin-top: 10px"
+          >
+            <div
+              class="content-center"
+              *ngFor="let data of item.answer"
+              [ngStyle]="{
+                'background-color': data.options == true ? 'green' : ''
+              }"
+            >
+              {{ data.value }}
+            </div>
+          </div>
+        </cdk-accordion-item>
+      </cdk-accordion>
+    </div>
+  </div>
+</div>

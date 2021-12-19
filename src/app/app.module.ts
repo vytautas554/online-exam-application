@@ -3,16 +3,32 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { CdkAccordionModule } from '@angular/cdk/accordion';
+import { QuestionsCatalogComponent } from './questions-catalog/questions-catalog.component';
+import { HttpClientModule } from '@angular/common/http';
+import { NavComponent } from './nav/nav.component';
+import { ExamComponent } from './exam/exam.component';
+import { BackgroundDirective } from './shared/directives/background.directive';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    QuestionsCatalogComponent,
+    NavComponent,
+    ExamComponent,
+    BackgroundDirective,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule,
+    NoopAnimationsModule,
+    CdkAccordionModule,
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

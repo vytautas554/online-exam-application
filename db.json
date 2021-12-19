@@ -1,0 +1,89 @@
+{
+  "questions": [
+    {
+      "title": "Didžiausias Lietuvos miestas?",
+      "answer": [
+        {
+          "options": true,
+          "value": "Vilnius"
+        },
+        {
+          "options": false,
+          "value": "Kaunas"
+        },
+        {
+          "options": false,
+          "value": "Klaipėda"
+        }
+      ]
+    },
+    {
+      "title": "Laikinoji Lietuvos sostinė?",
+      "answer": [
+        {
+          "options": false,
+          "value": "Vilnius"
+        },
+        {
+          "options": true,
+          "value": "Kaunas"
+        },
+        {
+          "options": false,
+          "value": "Klaipėda"
+        }
+      ]
+    },
+    {
+      "title": "Miestas prie jūros?",
+      "answer": [
+        {
+          "options": false,
+          "value": "Vilnius"
+        },
+        {
+          "options": false,
+          "value": "Šiauliai"
+        },
+        {
+          "options": true,
+          "value": "Klaipėda"
+        }
+      ]
+    },
+    {
+      "title": "Suvalkijos \"Sostinė\"?",
+      "answer": [
+        {
+          "options": false,
+          "value": "Prienai"
+        },
+        {
+          "options": false,
+          "value": "Šakiai"
+        },
+        {
+          "options": true,
+          "value": "Marijampolė"
+        }
+      ]
+    },
+    {
+      "title": "Miestas turintis atominę elektrinę Lietuvoje?",
+      "answer": [
+        {
+          "options": true,
+          "value": "Ignalina"
+        },
+        {
+          "options": false,
+          "value": "Kybartai"
+        },
+        {
+          "options": false,
+          "value": "Panevėžys"
+        }
+      ]
+    }
+  ]
+}
