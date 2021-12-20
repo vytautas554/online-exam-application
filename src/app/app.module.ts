@@ -12,6 +12,7 @@ import { NavComponent } from './nav/nav.component';
 import { ExamComponent } from './exam/exam.component';
 import { BackgroundDirective } from './shared/directives/background.directive';
 import { AuthComponent } from './auth/auth.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { AuthComponent } from './auth/auth.component';
     ExamComponent,
     BackgroundDirective,
     AuthComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

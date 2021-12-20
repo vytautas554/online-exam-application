@@ -85,5 +85,11 @@
         }
       ]
     }
+  ],
+  "users": [
+    {
+      "username": "vytautas",
+      "password": "admin"
+    }
   ]
 }
