@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NavComponent } from './nav/nav.component';
 import { ExamComponent } from './exam/exam.component';
 import { BackgroundDirective } from './shared/directives/background.directive';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { BackgroundDirective } from './shared/directives/background.directive';
     NavComponent,
     ExamComponent,
     BackgroundDirective,
+    AuthComponent,
   ],
   imports: [
     BrowserModule,
