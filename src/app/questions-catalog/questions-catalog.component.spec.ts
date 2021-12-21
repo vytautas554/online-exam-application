@@ -1,16 +1,17 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientModule } from "@angular/common/http";
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { QuestionsCatalogComponent } from './questions-catalog.component';
+import { QuestionsCatalogComponent } from "./questions-catalog.component";
 
-describe('QuestionsCatalogComponent', () => {
+describe("QuestionsCatalogComponent", () => {
   let component: QuestionsCatalogComponent;
   let fixture: ComponentFixture<QuestionsCatalogComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ QuestionsCatalogComponent ]
-    })
-    .compileComponents();
+      imports: [HttpClientModule],
+      declarations: [QuestionsCatalogComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -19,7 +20,7 @@ describe('QuestionsCatalogComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

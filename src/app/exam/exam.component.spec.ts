@@ -1,16 +1,17 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientModule } from "@angular/common/http";
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { ExamComponent } from './exam.component';
+import { ExamComponent } from "./exam.component";
 
-describe('ExamComponent', () => {
+describe("ExamComponent", () => {
   let component: ExamComponent;
   let fixture: ComponentFixture<ExamComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ExamComponent ]
-    })
-    .compileComponents();
+      imports: [HttpClientModule],
+      declarations: [ExamComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -19,7 +20,13 @@ describe('ExamComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
+  });
+
+  it("should have value", () => {
+    let spy = component.questionsData;
+    expect(spy).toEqual([]);
+    fixture.detectChanges();
   });
 });
