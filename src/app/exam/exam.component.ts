@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { Question } from '../shared/dto/question.model';
-import { QuestionsService } from '../shared/services/questions/questions.service';
+import { Component, OnInit } from "@angular/core";
+import { Question } from "../shared/dto/question.model";
+import { ApiService } from "../shared/services/questions/api.service";
 
 @Component({
-  selector: 'app-exam',
-  templateUrl: './exam.component.html',
-  styleUrls: ['./exam.component.scss'],
+  selector: "app-exam",
+  templateUrl: "./exam.component.html",
+  styleUrls: ["./exam.component.scss"],
 })
 export class ExamComponent implements OnInit {
   questionsData: Question[] = [];
@@ -18,14 +18,14 @@ export class ExamComponent implements OnInit {
   random: number;
   questionsLength: number;
 
-  constructor(private questionsService: QuestionsService) {}
+  constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
     this.getAllQuestions();
   }
 
   getAllQuestions() {
-    this.questionsService.getQuestions().subscribe((res) => {
+    this.apiService.getQuestions().subscribe((res) => {
       this.questionsData.push(res);
       this.arr = this.questionsData.flat();
       this.questionsLength = this.arr.length;

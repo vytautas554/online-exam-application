@@ -1,37 +1,50 @@
-import { Component, OnInit } from '@angular/core';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
-import { map } from 'rxjs/operators';
-import { AuthService } from '../shared/services/auth/auth.service';
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute, Router } from "@angular/router";
+import { User } from "../shared/dto/user.model";
+import { AuthService } from "../shared/services/auth/auth.service";
+import { ApiService } from "../shared/services/questions/api.service";
 
 @Component({
-  selector: 'app-auth',
-  templateUrl: './auth.component.html',
-  styleUrls: ['./auth.component.scss'],
+  selector: "app-auth",
+  templateUrl: "./auth.component.html",
+  styleUrls: ["./auth.component.scss"],
 })
 export class AuthComponent implements OnInit {
-  username = new FormControl('');
-  password = new FormControl('');
+  formInput: User = {
+    userName: "",
+    password: "",
+  };
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private apiService: ApiService, private authService: AuthService, private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
     this.allUsers();
   }
 
+  tryLogin(form: any) {
+    const userName = form.controls.userName.value ?? "";
+    const password = form.controls.password.value ?? "";
+
+    this.authService
+      .Login(userName, password)
+      .pipe()
+      .subscribe(
+        () => {
+          this.router.navigateByUrl("/home");
+        },
+        (Error) => {
+          console.log(Error);
+        }
+      );
+  }
+
   allUsers() {
-    this.authService.getUsers().subscribe((x) => {
-      console.log('Users:', x);
+    this.apiService.getUsers().subscribe((x) => {
+      console.log("Users:", x);
     });
   }
 
   checkUser() {
-    this.authService.getUsers().subscribe((x) => {});
-    this.router.navigateByUrl('/home');
+    this.apiService.getUsers().subscribe((x) => {});
   }
 }

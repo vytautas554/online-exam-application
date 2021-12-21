@@ -27,6 +27,12 @@ describe("ExamComponent", () => {
   it("should have value", () => {
     let spy = component.questionsData;
     expect(spy).toEqual([]);
-    fixture.detectChanges();
+  });
+
+  it("should be equal to", () => {
+    let spy = component.currentQuestion;
+    let spy1 = component.answerSelected;
+    expect(spy).toEqual(0);
+    expect(spy1).toEqual(false);
   });
 });

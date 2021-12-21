@@ -1,12 +1,20 @@
 <div class="form-container">
   <div>
-    <h2 style="display: flex; justify-content: center; margin-bottom: 50px">
-      Login
-    </h2>
-    <form>
+    <h2 style="display: flex; justify-content: center; margin-bottom: 50px">Login</h2>
+    <form #validationForm="ngForm">
       <div>
-        <label for="username">Username</label>
-        <input type="text" formControlName="username" class="form-control" />
+        <label for="userName">Username</label>
+        <input
+          class="form-control"
+          name="userName"
+          type="text"
+          [ngClass]="{
+            'is-invalid': !userName.valid && (userName.dirty || userName.touched)
+          }"
+          #userName="ngModel"
+          required
+          [(ngModel)]="formInput.userName"
+        />
         <div class="invalid-feedback">
           <div>Username is required</div>
         </div>
@@ -14,22 +22,22 @@
       <div class="form-group">
         <label for="password">Password</label>
         <input
-          type="password"
-          formControlName="password"
           class="form-control"
+          name="password"
+          type="password"
+          [ngClass]="{
+            'is-invalid': !password.valid && (password.dirty || password.touched)
+          }"
+          #password="ngModel"
+          required
+          [(ngModel)]="formInput.password"
         />
         <div class="invalid-feedback">
           <div>Password is required</div>
         </div>
       </div>
       <div class="form-group">
-        <button
-          style="width: 100%"
-          class="btn btn-primary"
-          (click)="checkUser()"
-        >
-          Login
-        </button>
+        <button style="width: 100%" class="btn btn-primary" (click)="tryLogin(validationForm)">Login</button>
       </div>
     </form>
   </div>

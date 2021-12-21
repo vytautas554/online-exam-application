@@ -13,6 +13,7 @@ import { ExamComponent } from "./exam/exam.component";
 import { BackgroundDirective } from "./shared/directives/background.directive";
 import { AuthComponent } from "./auth/auth.component";
 import { HomeComponent } from "./home/home.component";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { HomeComponent } from "./home/home.component";
     HomeComponent,
     NavComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, NgbModule, NoopAnimationsModule, CdkAccordionModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, NgbModule, NoopAnimationsModule, CdkAccordionModule, HttpClientModule, FormsModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

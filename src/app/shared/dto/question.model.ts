@@ -1,6 +1,6 @@
-import { Answer } from './answer.model';
+import { Answer } from "./answer.model";
 
-export interface Question {
+export class Question {
   title: string;
   answer: Answer;
 }
