@@ -3,6 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { Question } from "src/app/shared/dto/question.model";
 import { map } from "rxjs/operators";
 import { User } from "../../dto/user.model";
+import { RegisterUser } from "../../dto/registerUser.model";
 
 @Injectable({
   providedIn: "root",
@@ -24,5 +25,9 @@ export class ApiService {
         return x;
       })
     );
+  }
+
+  postUser(postData: RegisterUser) {
+    return this.http.post<any>("http://localhost:3000/users", postData).pipe();
   }
 }

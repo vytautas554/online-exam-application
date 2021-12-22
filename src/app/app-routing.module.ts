@@ -1,25 +1,30 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { AuthComponent } from './auth/auth.component';
-import { ExamComponent } from './exam/exam.component';
-import { HomeComponent } from './home/home.component';
-import { QuestionsCatalogComponent } from './questions-catalog/questions-catalog.component';
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
+import { AddUserComponent } from "./auth/add-user/add-user.component";
+import { AuthComponent } from "./auth/auth.component";
+import { ExamComponent } from "./exam/exam.component";
+import { HomeComponent } from "./home/home.component";
+import { QuestionsCatalogComponent } from "./questions-catalog/questions-catalog.component";
 
 const routes: Routes = [
   {
-    path: '',
+    path: "",
     component: AuthComponent,
   },
   {
-    path: 'home',
+    path: "register",
+    component: AddUserComponent,
+  },
+  {
+    path: "home",
     component: HomeComponent,
   },
   {
-    path: 'questions-catalog',
+    path: "questions-catalog",
     component: QuestionsCatalogComponent,
   },
   {
-    path: 'exam',
+    path: "exam",
     component: ExamComponent,
   },
 ];

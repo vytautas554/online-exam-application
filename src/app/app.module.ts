@@ -14,6 +14,7 @@ import { BackgroundDirective } from "./shared/directives/background.directive";
 import { AuthComponent } from "./auth/auth.component";
 import { HomeComponent } from "./home/home.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { AddUserComponent } from './auth/add-user/add-user.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
     AuthComponent,
     HomeComponent,
     NavComponent,
+    AddUserComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, NgbModule, NoopAnimationsModule, CdkAccordionModule, HttpClientModule, FormsModule, ReactiveFormsModule],
   providers: [],
