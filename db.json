@@ -88,11 +88,28 @@
   ],
   "users": [
     {
-      "name": "vytautas",
+      "name": "Vytautas",
       "email": "vytautas@vytautas.lt",
       "userName": "admin",
       "password": "admin",
+      "role": "Admin",
       "id": 1
+    },
+    {
+      "name": "test",
+      "email": "teast@test.lt",
+      "userName": "test",
+      "password": "test",
+      "role": "Student",
+      "id": 2
+    },
+    {
+      "name": "",
+      "email": "",
+      "userName": "",
+      "password": "",
+      "role": "",
+      "id": 3
     }
   ]
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { ToastrService } from "ngx-toastr";
 import { RegisterUser } from "src/app/shared/dto/registerUser.model";
 import { User } from "src/app/shared/dto/user.model";
 import { ApiService } from "src/app/shared/services/questions/api.service";
@@ -14,9 +15,16 @@ export class AddUserComponent implements OnInit {
     email: "",
     userName: "",
     password: "",
+    role: "",
   };
 
-  constructor(private apiService: ApiService) {}
+  roles = [
+    { id: 1, label: "Admin" },
+    { id: 2, label: "Teacher" },
+    { id: 1, label: "Student" },
+  ];
+
+  constructor(private apiService: ApiService, private toastr: ToastrService) {}
 
   ngOnInit(): void {}
 
@@ -25,16 +33,16 @@ export class AddUserComponent implements OnInit {
     const email = form.controls.email.value ?? "";
     const userName = form.controls.userName.value ?? "";
     const password = form.controls.password.value ?? "";
-    const postData = { name, email, userName, password };
+    const role = form.controls.role.value ?? "";
+    const postData = { name, email, userName, password, role };
 
     this.apiService.postUser(postData).subscribe(
       (res) => {
-        alert("User added");
-        console.log(res);
+        this.toastr.success(userName, "User added successfully");
         form.reset();
       },
       (err) => {
-        alert("Unable add user");
+        this.toastr.error("can't add", userName);
         console.log(err);
       }
     );

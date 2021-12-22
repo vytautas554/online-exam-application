@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
+import { ToastrService } from "ngx-toastr";
 import { BehaviorSubject } from "rxjs";
 import { User } from "../shared/dto/user.model";
 import { AuthService } from "../shared/services/auth/auth.service";
@@ -21,7 +22,13 @@ export class AuthComponent implements OnInit {
     password: "",
   };
 
-  constructor(private apiService: ApiService, private authService: AuthService, private route: ActivatedRoute, private router: Router) {}
+  constructor(
+    private apiService: ApiService,
+    private authService: AuthService,
+    private route: ActivatedRoute,
+    private router: Router,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit() {
     this.allUsers();
@@ -38,10 +45,10 @@ export class AuthComponent implements OnInit {
           return x.userName === userName && x.password === password;
         });
         if (user) {
-          alert("Login success");
+          this.toastr.success("Welcome to online exam", user.userName);
           this.router.navigate(["/home"]);
         } else {
-          alert("user not found");
+          this.toastr.error("Bad username or password");
         }
       },
       (Error) => {
