@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ToastrService } from "ngx-toastr";
 import { RegisterUser } from "src/app/shared/dto/registerUser.model";
 import { User } from "src/app/shared/dto/user.model";
-import { ApiService } from "src/app/shared/services/questions/api.service";
+import { ApiService } from "src/app/shared/services/api/api.service";
 
 @Component({
   selector: "app-add-user",

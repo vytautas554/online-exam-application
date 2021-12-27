@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { map } from "rxjs/operators";
-import { ApiService } from "../shared/services/questions/api.service";
+import { ApiService } from "../shared/services/api/api.service";
 
 @Component({
   selector: "app-questions-catalog",

@@ -4,7 +4,7 @@ import { ToastrService } from "ngx-toastr";
 import { BehaviorSubject } from "rxjs";
 import { User } from "../shared/dto/user.model";
 import { AuthService } from "../shared/services/auth/auth.service";
-import { ApiService } from "../shared/services/questions/api.service";
+import { ApiService } from "../shared/services/api/api.service";
 
 export const TokenHeaderName = "OnlineExamToken";
 export const SessionHeaderName = "OnlineExamSession";

@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Question } from "../shared/dto/question.model";
-import { ApiService } from "../shared/services/questions/api.service";
+import { ApiService } from "../shared/services/api/api.service";
 
 @Component({
   selector: "app-exam",
