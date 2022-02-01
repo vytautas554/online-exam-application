@@ -16,6 +16,7 @@ import { HomeComponent } from "./home/home.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AddUserComponent } from "./auth/add-user/add-user.component";
 import { ToastrModule } from "ngx-toastr";
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ToastrModule } from "ngx-toastr";
     HomeComponent,
     NavComponent,
     AddUserComponent,
+    TestComponent,
   ],
   imports: [
     BrowserModule,
